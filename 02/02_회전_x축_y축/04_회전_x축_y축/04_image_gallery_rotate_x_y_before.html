@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head lang="ko">
+ <meta charset="utf-8">
+  <title> new document </title>
+	<style> 
+		*{ margin:0; padding:0 }
+		li{ list-style-type:none; /*border:1px solid black;*/}
+		h1{ text-align:center;}
+		div{ width:980px; margin:0 auto; }
+		ul{ width:100%; border:1px solid red; overflow:hidden; }
+		ul li{ 
+			width:300px; 
+			height:240px; 
+			float:left;
+			margin:20px 0 0 20px;
+			transition:all .3s;
+		}  /* li tag가 전체 영역을 (반드시 부모 영역을 설정하고 이미지를 100%로 사용한다.) */
+
+		ul li:hover { transform:rotatex(180deg); }
+		ul li img { width:100%; height:100%; }
+		ul li.rotatey:hover{ transform:rotatey(180deg); }
+
+		/* 05. 여백값 초기화 */
+		/* 06. h1에 스타일 효과작성
+				+ 너비 1280픽셀
+				+ 바깥쪽 여백 위쪽 20픽셀
+				+ 바깥쪽 여백 왼쪽 40픽셀
+				+ 배경색상 핑크
+				+ 글자정렬 가운데
+				+ 글자색상 하얀색
+		*/
+		/* 07. h1에 마우스 올리면에 대한 스타일 작성
+				+ 글자색상 노란색
+				+ 마우스 모양 손모양으로
+		*/
+		/* 08. ul태그 안에 li에 스타일 속성작성
+				+ 블릿기호 없에기
+				+ 왼쪽으로 나열하기
+				+ 바깥쪽 여백 왼쪽과 위쪽 각각 40픽셀 20픽셀
+		
+		*/
+		/* 09. ul에 속하는 li에 속하는 img에 스타일효과작성
+				+ 너비 400픽셀
+				+ 높이 300픽셀
+				+ 장면 전환 모든 속성이 0.3초 동안 처음이 느리게 설정
+		
+		*/
+		/* 10. 이미지 윗줄은 x축으로 회전되도록, 아랫쪽은 y축으로 회전되도록 만들기 */
+    </style>
+	<script> </script>
+
+ </head>
+
+ <body>
+	<div id="wrap">
+		<h1> Images-gallery </h1>
+		<ul>
+			<li><img src="images/b01.jpg" alt="이미지1"/></li> <!--이미지 파일은 0번 부터 하는 것이 좋다.-->
+			<li><img src="images/b02.jpg" alt="이미지2"/></li>
+			<li><img src="images/b03.jpg" alt="이미지3"/></li>
+			<li class="rotatey"><img src="images/b04.jpg" alt="이미지4"/></li>
+			<li class="rotatey"><img src="images/b05.jpg" alt="이미지5"/></li>
+			<li class="rotatey"><img src="images/b06.jpg" alt="이미지6"/></li>
+		</ul>
+	</div>
+
+	<!--01. div 태그 만들기 -->
+		<!--02. h1태그 만들고 Images-gallery 작성-->
+			<!--03. ul리스트 만들기-->
+			<!--04. li태그 사이에 이미지 링크걸기 b01.. b06까지 
+					+ 조건: b04.jpg파일부터.. b06.jpg까지는 li에 class속성 사용 이름은 rotatey 작성
+			-->
+	</div>
+ </body>
+</html>
+<!--
+	
+	 
+-->

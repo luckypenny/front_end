@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style>
+		*{ margin:0; padding:0; }
+		body{ background-color:#333; }
+		h1{ text-align:center; color:#ccc; }
+		section{ width:100%; }
+		section h2 { text-align:center; color:#aaa; text-decoration:underline; }
+
+		.box {
+			width:240px;
+			height:240px;
+			background-color:rgba(255,255,255,0.5);
+			margin:50px auto;
+			text-align:center; /*img 태그는 인라인 속성이기 때문에 text-align이 사용한다. text-align:center > margin:0 auto*/
+
+			/*
+				16진법 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+				  + 0 : 검정색
+				  + f : 하얀색
+				
+				rgb :
+					red, green, blue
+					0~255까지 사용
+					 + 0: 검정색
+					 + 255: 하얀색
+
+				rgba + alpha
+				
+			*/
+			transition:all 1s;
+		}
+
+		.box:hover {
+			transform:rotate(-15deg);
+		}
+		
+		div.box img {
+			border:2px solid #fff;
+			margin-top:9px; /*중간에 맞추는 방법은 다양하다.*/
+			box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+			/*
+				box-shadow는 박스에 그림자를 주는 효과
+				01) x축
+				02) y축
+				03) 그림자가 퍼지는 정도
+				04) 그림자 색상
+			*/
+			transition:all 1s ease-in-out 0.5s;
+		}
+
+		.box:hover img {
+			transform:rotate(30deg);
+		}
+
+	</style>
+	<script></script>
+</head>
+<body>
+	<div id="wrap">  <!-- warp은 모든 사이트의 틀을 잡는다. Daum 사이트 -->
+		<h1> Transform_Rotate </h1>
+		<section>
+			<h2> ROTATE </h2>
+			<div class="box">
+				<img src="images/score.png" alt="이미지"/>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

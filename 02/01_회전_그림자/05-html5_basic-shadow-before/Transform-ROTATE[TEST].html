@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3 Transforms</title>
+<link rel="stylesheet" href="css/reset.css">
+<style>
+body{ /*  // 배경색상:#333    */  background-color:#333;}
+.wrapper{  /*  // 가로:500px;   // 바깥쪽영역 : 위, 아래 100px   좌우자동계산해서 중앙으로    */
+	width:500px;
+	margin:100px auto;
+}
+
+
+/********************
+	 CSS Transform  : Rotate on hover  01_ box
+*********************/
+.box{
+	/*	 //가로:220px   //높이:220px   // 안쪽여백:10px;		 */
+	width:220px;
+	height:220px;
+	padding:10px;
+	
+	/*-----Question01    Translucent background color with RGBA
+			배경-색 : red : 255  green:255 blue:255 
+			  투명도  85%
+	*/
+	background:rgba(255,255,255,0.85);
+
+	
+	/*-----Question02    Rounded Corners+  벤더프리픽스 붙이기
+			모서리 둥글게 만들기 - 상하좌우 10px
+	*/
+	border-radius:10px;
+
+	
+	/*-----Question03    Get rid of Bleed :  재단의 영역 - 경계선
+		배경색을 어디까지 칠해 줄것인지 결정하는 속성 - 패팅까지 색상 넣어주기
+		background-clip: padding-box
+	*/
+
+	
+	/*-----Question04    transition +  벤더프리픽스 붙이기
+		 모든속성을 1s 동안  처음과 끝이 느리게 설정하기
+	*/
+
+}
+
+/********************
+	 CSS Transform  : Rotate on hover  02_ img
+*********************/
+.box img{
+	/* 선 : 1px solid 하얀색*/
+	border:1px solid white;
+	/*-----Question05   A box shadow to add a bit of deep sensation  ::::::::::::: border-shadow 설명
+			box-shadow: 가로px 세로px 그림자퍼지는정도px 색상;
+			- 5px :가로로 밀리는 폭 
+			- 5px :세로로 밀리는 폭
+			- 5px : 그림자가 퍼지는 정도	
+			- 색상 : 검정색 - 투명도 25%
+	*/
+
+	
+	/*-----Question06 	transition +  벤더프리픽스 붙이기
+		 모든속성을 1s 뒤에  처음과 끝이 느리게 설정하기
+	*/
+	
+}
+
+
+/********************
+	 CSS Transform  : Rotate on hover  03_ :hover 시에 rotate 효과 주기
+*********************/
+.box:hover{
+	/*-----Question07 	box의 rotate 의 속성 얼마????   : 완성본보고 rotate 속성 파악해보기   Rotate -15deg CCW */
+	transform:rotate(-15deg);
+
+}
+.box:hover img{
+	/*-----Question08 	img의 rotate 의 속성 얼마????   : 완성본보고 rotate 속성 파악해보기 Rotate 30deg CW */
+	transform:rotate(30deg);
+}
+</style>    
+
+</head>
+
+<body>
+   <div class="wrapper">
+	  <section  class="rotate">
+		<div class="box">
+			<img src="images/score.png" alt="rotate_image">
+		</div>
+	  </section>
+   </div>
+</body>
+</html>
+
+<!--
+
+	<div id="page">
+		<div id="header"></div> ==> header
+		<div id="main"> </div>
+		<div id="footer"> </div> ==> footer
+	</div>
+::::::::::::::::::::::::::::::
+	 기존의 xhtml보다 더 의미론적인 구조를 가진 웹문서를 만들기위해
+		section : 의미가 같은 내용을 묶어주는 그룹섹션
+		  header ,footer, nav,article, aside
+
+-->

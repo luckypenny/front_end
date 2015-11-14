@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background-color:#333;
+			color: #fff;
+			font-size: 17px; 
+			font-weight:700; /* 100~300 얇은 표현 
+			                    400~600 보통 두께
+								700~900 굵은 표현
+							 */
+			font-style:italic;
+			/*
+				16진법
+				0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+				기본표현방법 : #00 :red       00 : green       00 : blue
+				축약형 표현방법 : #000
+			*/
+		}
+
+		p{
+			width: 150px; height:150px; background-color:lightblue;
+		}
+
+		.translate{
+			/* 이동 x축, y축 */
+			transform:translate(100px, 50px);
+		}
+		
+		.margin{
+			/* margin:0 auto; */ /* 마진을 잘 써야 간이 홈페이지를 잘 만든다. */
+			margin: 20px 30px 40px 50px;
+		}
+
+		.scale{
+			transform:scale(0.5,1);
+		}
+
+	</style>
+	<script></script>
+</head>
+<body>
+	<p> BASIC </p>
+	<hr/>
+	<p class="translate">이동_transform:translate(x축, y축)</p>
+	<hr/>
+	<p class="margin"> 바깥쪽여백 </p>
+	<hr/>
+	<p class="scale"> 크기변화_transform:scale(x축, y축)</p>
+	<hr/>
+</body>
+</html>

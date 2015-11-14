@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Scale</title>
+<link rel="stylesheet" href="css/reset.css">
+
+<style>
+body{ /*  
+	// 글꼴:Arial, Helvetica, sans-serif;   
+	//배경색:#333  */   
+	font-family:Arial, Helvetica, serif;
+	background-color:#333; /*#eee 는 각도에 따라서 보이지 않는다.*/ /* body -> CSS -> Jquery (CSS) www.philips.co.kr 예)깜박임 */
+}
+
+.wrapper{ /* // 바깥쪽영역: 위아래0px  좌우를 자동으로계산해서 중앙으로 맞춤; // 가로:1000px;  //안쪽영역 :상하10px  좌우0px */
+	width:1000px;
+	padding: 10px 0;
+	overflow:hidden;
+	margin: 0 auto;
+}
+
+/********************
+	 CSS Transform  : Scale
+*********************/
+
+.box{ /* 
+	//가로방향으로 컨텐츠 나열하기  (float:left;	)
+	// 가로:200px 
+	//세로:200px //바깥쪽영역:상하좌우 50px   //안쪽영역:상하좌우 15px
+    //글꼴:Arial, Helvetica, sans-serif;    //폰트싸이즈 : 16px  //굵게  //배경색:pink;  //글자색:하얀색
+	  */
+    float:left;	 
+	width:200px;
+	height:200px;
+	margin:30px;
+	padding:15px;
+	font-family:"Arial", Helvetica, serif;
+	font-weight:bold;
+	background-color:pink;
+	color:#fff;
+
+	/*-----Question01   Rounded Corners +  벤더프리픽스 붙이기
+			// 선 :2px solid #FFF;
+			// 	모서리 둥글게 만들기 - 상하좌우 20px
+	*/
+	
+	border:2px solid #fff;
+	border-radius:20px;
+	-wekbit-border-radius:20px;
+	-moz-border-radius:20px;
+	-o-border-radius:20px;
+	-ms-border-radius:20px;
+
+	/*-----Question02   Get rid of Bleed :  재단의 영역 - 경계선
+		배경색을 어디까지 칠해 줄것인지 결정하는 속성 - 패팅까지 색상 넣어주기
+		background-clip: padding-box
+	*/
+ 
+	background-clip: padding-box;
+}
+
+.box img{  /*  //선:1px solid #FFF; (border:1px solid #fff;)   //바깥쪽영역-위:10px   */
+	border:1px solid #fff;
+	margin-top:10px;
+}
+
+/*-----Question03  Transforms :  
+		사이즈 가로-세로:50%로 주기  
+*/
+.scale50{
+	transform:scale(0.5);
+}
+
+/*-----Question04  Transforms :  
+		사이즈 가로-세로:120%로 주기
+*/
+.scale120{
+	transform:scale(1.2);
+}
+
+/*-----Question05  Transforms +  transition 
+		배경색상:lightblue;
+		마우스를 올리기전에 사이즈 가로-세로:25%로 주기
+		마우스를 올리면 사이즈 가로-세로:75% 로바뀐다.
+
+		이때 모든속성에 1s 뒤에 처음과 끝이 느린 효과를 준다.
+*/
+.scale25-75{
+	background-color:lightblue;
+	transform:scale(0.25);
+	transition:all 1s ease-in;
+}
+.scale25-75:hover{
+	transform:scale(0.75,0.75);
+
+}
+
+/*-----Question06  Transforms :  
+		사이즈 가로만:50%로 주기
+
+	transform:scale(0.5, 1);
+	-webkit-transform:scale(0.5, 1);
+	-moz-transform:scale(0.5, 1);
+	-o-transform:scale(0.5, 1);
+	-ms-transform:scale(0.5, 1);	
+*/
+.scale50x{
+	transform:scalex(0.5);
+
+}
+/*-----Question07  Transforms :  
+		사이즈 세로만:50%로 주기
+*/
+.scale50y{
+	transform:scaley(0.5);
+}
+
+</style>
+
+</head>
+
+<body class="linear">
+<div class="wrapper">
+  <section class="box">
+    		BASIC
+  		<img src="images/score.png" width="195" height="140" alt="pic"> 
+  </section>
+    
+    <section class="box scale50">
+  		Scale 50%
+		<img src="images/score.png" width="195" height="140" alt="pic"> 
+	</section>
+    
+    <section class="box scale120">
+  		Scale 120%
+        <img src="images/score.png" width="195" height="140" alt="pic"> 
+  	</section>
+  
+  	<section class="box scale25-75">
+    	Scale from 25% to 75% on hover
+        <img src="images/score.png" width="195" height="140" alt="pic"> 
+  	</section>
+    
+    <section class="box scale50x">
+    	Scale X 	50%
+        <img src="images/score.png" width="195" height="140" alt="pic"> 
+  	</section>
+    
+    <section class="box scale50y">
+    	Scale Y 50%
+        <img src="images/score.png" width="195" height="140" alt="pic"> 
+  	</section>
+    
+</div>
+</body>
+</html>
+
+<!--
+   01) http://www.w3schools.com/
+   02) 검색창에 transition
+   03) 링크된 경로 확인하기
+-->

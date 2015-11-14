@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style>
+		div {
+			width:200px;
+			height:150px;
+			background-color:orange;
+			cursor:pointer;
+			
+			/* ver-1 
+			transition:width 1s ease-in 0.1s,background-color 1s ease-in 0.1s,color 1s ease-in 0.1s;
+			*/
+			transition:width 1s, background-color 1s, color 1s ease-in 0.1s;
+		}
+
+		div:hover{
+			width:400px;
+			background-color:red;
+			color:#fff;
+		}
+	</style>
+	<script></script>
+</head>
+<body>
+	<div>
+		transition
+	</div>
+</body>
+</html>
+<!-- 
+	transition property duration timing-function transition-delay
+
+	transition : 장면전환
+	property : 속성(변하는 부분)
+	  + width, height, background-color, color ....
+    duratino : 변화되는 시간
+                   ~~하는 동안
+    timing-function 
+	  + 장면전환이 일어나는 효과 (jQuery 이징효과가 더 좋다)
+	  + linear : 일정한 속도
+	  + ease-in : 처음에는 천천히 뒤에는 빠르게
+	  + ease-out : 처음에는 빠르게 뒤에는 느리게
+	  + ease-in-out: 처음과 끝이 느리게 
+	delay : 마우스를 올리고 처음 작동할때 까지의 시간
+
+
+
+	hover는 이미 변화가 끝나기 때문에 hover 전에 바뀌어야 한다. 
+	
+    이전 요소와 이후 요소가 있고 transition이 그 이후에 작업한다. 
+-->

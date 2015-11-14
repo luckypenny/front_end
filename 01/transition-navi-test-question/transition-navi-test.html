@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><title> CSS3 </title>
+<meta charset="utf-8" />
+	<style type="text/css">
+		* { /*	//바깥쪽영역:0;	 //안쪽여백:0;	*/
+			margin:0;
+			padding:0;
+		}
+		li { /*	//블릿기호 없음  */ list-style-type:none } 
+		body { /* //글자 :20px "Arial",Gulim; //바깥쪽여백-상하좌우:20px;	
+	//font 정리 :  font:bold 20px/1.5  "Arial",Gulim;
+		*/  
+			font:italic bold 20px/1.5em "Arial", Gulim;  /*em은 애플기기에서 성능저하가 발생한다.*/
+			/*
+				font 축약형 표현방법
+
+				01) 글꼴의 모양 결정하는 값
+					+ 굵기
+					+ 기울이기
+				02) 글꼴의 크기
+				03) 행간
+				04) 글꼴
+			*/
+			padding:20px;
+		}
+		h1,ul { /* //안쪽여백-상하좌우:10px; */
+			padding:10px;
+		}
+		.util li { 
+				/*  // 더블마진 없애기 	*/   
+			display:inline;
+		}
+		.util li a {
+			background-color:darkblue;
+			color:#abcedf;
+			padding:10px 20px;
+			float:left;
+			margin-right:1px;
+			text-decoration:none;
+			/*  //가로방향으로 컨텐츠; 나열하기 
+			// 안쪽여백:상하10px 좌우:20px   
+			//바깥-오른쪽여백 : 1px
+						  //배경색:darkblue;    //글자색:#abcedf;
+									
+			/***************************
+				Question: Transition 다중으로 여러속성을 적용시킬 수 있음
+					2s 동안 배경색이 바뀜 + 2s 동안 글자색이 바뀜
+
+			*/
+			transition:background-color 2s, color 2s;
+
+		}
+		.util li a:hover {  /*  //배경색:#abcedf;  //글자색:#123456;   */ 
+
+			background-color:#abcedf;
+			color:#123456;
+		
+		}
+	</style>
+</head>
+<body>
+	<h1>TRANSITIONS-multi</h1>
+	<ul class="util">
+		<li><a href="#">HOME</a></li>
+		<li><a href="#">JOIN</a></li>
+		<li><a href="#">SITEMAP</a></li>
+	</ul>
+</body>
+</html>
+
+<!--
+
+:::::::::::::::::::  속성전환( Transitions)
+	transition은 background, color, height, width, transformation 등의 속성을 애니메이션을 적용하는 것
+
+		transition:property duration timingfunction;
+			property : 애니메이션시킬 속성을 사용함
+			duration : 시작해서 끝날때 까지 시간을 초 단위로 지정함
+			timingfunction : 속도 변화를 기술하는데  움직임을 설정함
+							- linear  :시작부터 끝까지 같은속도 
+							- ease-in : 느리게--- 빠르게
+							- ease-out : 빠르게 -- 느리게
+							- ease-in-out : 시작과 끝이 느리게
+							- cubic-benzier(N,N,N,N) 값을 입력하여 가속/ 감속을 조작
+		
+		
+		===================================================
+		transition-delay: 0.5s;   //0.5초 지난 후 작동함.
+		transition:all 2s ease-in 0.2s
+		transition:background 0.5s  ease, color 0.3s linear;  // 다중으로 여러속성을 적용시킬 수 있음
+
+-->	
