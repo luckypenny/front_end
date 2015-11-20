@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<style>
+		*{margin:0; padding:0;}
+		body{margin:0; padding:0;}
+		a:link, a:visited{text-decoration:none; color:#fff;}
+		a:hover, a:focus{ color:#f00; } /* 커서 와 탭키 */
+			
+		/*+++++ 스킵-네비세이션 +++++*/
+			#skipNav{width:100%; position:absolute; top:-30px; }
+			#skipNav p a { 
+				display:block; 
+				width:100%;
+				position:absolute; 
+				line-height:30px;
+				background-color:#000; 
+
+				text-align:center;
+			}
+			#skipNav p a:focus{ top:30px; }
+		/*++++++++++++++++++++++++++*/
+		
+		#wrapper{
+			width:100%;
+			position:relative; /* 해더 푸터 등의 영역에 사용하면 빠져나가는 것을 막아준다. */
+		}
+		header{ width:90%; margin:0 auto;}
+		header h1 { width:100%; margin-top:50px; text-align:center;}
+		header h1 img { width:200px; }
+		#video{ width:66%; margin:10px auto 30px;}
+		#video video{width:100%;}
+		nav{ width:100% }
+		nav form{ width:70%; margin:0 auto; }
+		nav form input { width:99%; height:26px;  /* img와 input은 인라인태그인데 적용되는 태그이다. display:block을 사용할 필요가 없다. */
+				font-size:120%;  /* 1.8em->180% , 2.0em->200%  */
+				text-indent:10px;
+		}
+
+		#section{ width:100%; margin:30px 0; }
+		#section .view{ width:70%; margin:0 auto;}
+		#section .view a{ display:inline-block; width:24%; border:1px solid #ccc; margin-bottom:5px;} /* 잘못하면 오동작 하기 때문에 이것을 가지고 작업한다. */
+		#section .view a img { width:100%; }
+		#section a:hover{ box-shadow:2px 2px 2px rgba(0,0,0,0.5)}
+
+		/* 버리는 영역  읽어 줘야 하니깐 살려줘야 한다. */
+		#section h2{position:absolute;width:1px; height:1px; font-size:1px; line-height:0; left:-9999px; overflow:hidden;}
+
+		/* display:none은 스크린리더가 읽지 못한다. */
+		@media all and (min-width:1024px){ /* pc 버전 */
+			
+		}
+		@media all and (min-width:768px) and (max-width:1023px){
+			/* header{ background-color:#ccc; } */
+			
+			#section .view a{ display:inline-block; width:32%; border:1px solid #ccc; margin-bottom:5px;} /* 잘못하면 오동작 하기 때문에 이것을 가지고 작업한다. */
+
+			#section h2, .view .img1 {position:absolute;width:1px; height:1px; font-size:1px; line-height:0; left:-9999px; overflow:hidden;}
+		}
+		@media all and (min-width:320px) and (max-width:767px){
+			/* section{ background-color:gold} */
+
+			header h1 img { width:150px; }
+			#video{ width:90%; margin:10px auto 30px;}
+			nav form{ width:90%; margin:0 auto; }
+			nav form input { width:99%; height:26px;  /* img와 input은 인라인태그인데 적용되는 태그이다. display:block을 사용할 필요가 없다. */
+				font-size:100%;  /* 1.8em->180% , 2.0em->200%  */
+				text-indent:10px;
+			}
+			#section .view a{ display:inline-block; width:47%; border:1px solid #ccc; margin-bottom:5px;} /* 잘못하면 오동작 하기 때문에 이것을 가지고 작업한다. */
+		}
+
+	</style>
+	<script></script>
+</head>
+<body>
+	<div id="skipNav">   <!-- 탭키가 먹힐려면 링크를 걸어 줘야 한다.  스킵네비게이션 필요 -->
+		<p class="videoArea" ><a href="#video" title="비디오"> 비디오 영역 바로가기</a></p>
+		<p class="iconArea" ><a href="#section" title="썸네일"> 썸네일 영역 바로가기</a></p>
+	</div>
+	<div id="wrapper">
+		<header>
+			<h1><img src="img/logo.png" alt=""/></h1>
+			<div id="video">
+				<video controls autoplay>
+					<source src="frozen_fever.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<nav>
+				<form action="https://www.google.com/search" id="f" method="get">
+					<input id="q" autocomplete="off" name="q" type="text" placeholder="Google 검색 또는 URL 입력" />
+				</form>
+			</nav>
+		</header>
+		<section id="section">
+			<h2>썸네일 이미지</h2>
+			<div>
+				<p class="view">
+					<a href="http://www.naver.com" title="네이버"><img src="img/naver.jpg" alt="네이버"/></a>
+					<a href="http://www.daum.com" title="다음"><img src="img/daum.jpg" alt="다음"/></a>
+					<a href="http://www.lg.com" title="lg"><img src="img/lg.jpg" alt="lg"/></a>
+					<a href="http://www.audi.com" title="audi"><img src="img/audi.jpg" alt="audi"/></a>
+					<a href="http://www.nintendo.com" title="nintendo"><img src="img/nintendo.jpg" alt="nintendo"/></a>
+					<a href="http://www.samsung.com" title="samsung"><img src="img/samsung.jpg" alt=""/></a>
+					<a class="img1 samsung" href="http://www.sony.com" title="sony"><img src="img/sony.jpg" alt=""/></a>
+					<a class="img1 sony" href="http://www.w3c.com" title="w3c"><img src="img/w3c.jpg" alt=""/></a>
+				</p>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
+<!--
+	form에서 action="서버 측 주소 control 페이지로 넘어갈 때 사용"
+		+ method
+			+ get : 검색할 값이나, 정보들을 보여줄때
+			+ post : get의 기능과 반대 숨겨주거나 가려줄때 사용.
+-->
+
