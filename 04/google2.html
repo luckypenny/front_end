@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<style>
+		*{margin:0; padding:0}
+		body{margin:0; padding:0}
+
+		/*++++++ 스킵 네비게이션 +++++++++*/
+		#skipNav{width:100%; background-color:red; position:absolute; top:-30px;}
+		
+		/*+++++++++++++++++++++++++++++++++/
+	</style>
+	<script></script>
+</head>
+<body>
+	<div id="skipNav">
+		<p><a href="#"> 비디오 영역 바로가기</a></p>
+		<p><a href="#"> 썸네일 영역 바로가기</a></p>
+	</div>
+	<div id="wrapper">
+		<header>
+			<h1><img src="img/logo.png" alt=""/></h1>
+			<div id="video">
+				<video controls autoplay loop>
+					<source src="frozen_fever.mp4" type="video/mp4" />
+				</video>
+			</div>
+			<nav>
+				<form>
+					<input type="text" id="q" name="q" autocomplete="off" placeholder="Google 검색 또는 URL 입력" />
+				</form>
+			</nav>
+		</header>
+		<section id="section">
+			<h2>썸네일 이미지</h2>
+			<div>
+				<p class="view">
+					<a href="http://www.naver.com" title="네이버"><img src="img/naver.jpg" alt="네이버"/></a>
+					<a href="http://www.daum.com" title="다음"><img src="img/daum.jpg" alt="다음"/></a>
+					<a href="http://www.lg.com" title="lg"><img src="img/lg.jpg" alt="lg"/></a>
+					<a href="http://www.audi.com" title="audi"><img src="img/audi.jpg" alt="audi"/></a>
+					<a href="http://www.nintendo.com" title="nintendo"><img src="img/nintendo.jpg" alt="nintendo"/></a>
+					<a href="http://www.samsung.com" title="samsung"><img src="img/samsung.jpg" alt=""/></a>
+					<a class="img1 samsung" href="http://www.sony.com" title="sony"><img src="img/sony.jpg" alt=""/></a>
+					<a class="img1 sony" href="http://www.w3c.com" title="w3c"><img src="img/w3c.jpg" alt=""/></a>
+				</p>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
