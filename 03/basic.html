@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<style>
+		/* 초기화 : PC 버전에서만 적용 */
+		*{margin:0; padding:0;}
+		li {list-style:none;}
+		body{margin:0; padding:0;}
+
+		/*
+			body에서 초기화를 해주었는데도, 여백값이 생기면 
+			각각의 영역들을 잡아서 초기화 해준다. 
+		/* body,header,nav,div,section,footer{ margin:0; padding:0; } */
+		
+		/* 
+			반응형 : 모든 범위에 컨텐츠가 줄어들거나 늘어나면서 
+			         맞추는 작업
+			절대형 : 최소 사이즈에 맞추는 작업 
+			         사이즈가 변하면 안되는 사이트들에서 사용 
+					 쇼핑몰 (최소 픽셀 고정해서 사용한다.)
+		*/
+		/* PC 버전 */
+		@media all and (min-width:1024px) {
+			header{background-color:blue; text-align:center; color:#fff;}
+			#content{width:100%;}
+			.banner{width:84%; padding-left:4%; margin:20px auto;}
+			.banner ul {overflow:hidden;}
+			.banner ul li{width:30%; float:left; margin-right:1%; border:1px solid #333;}
+			.banner ul li img{ width:100%; }
+		}
+		
+		/* 테블릿PC : 아이패드, 노트 10.1, 갤럭시 탭, G3, G4, 아이폰 6*/
+		@media all and (min-width:768px) and (max-width:1023px){
+			nav{background-color:pink;}	
+			#content{ width:100%; }
+			/*.banner{ width:80%; background-color:orange; margin:0 auto;}*/
+			.banner{ width:80%; margin:0 auto;}
+			.banner ul { overflow:hidden; }
+			.banner ul li { width:48%; float:left; border: 1px solid #333; margin-left:2%;}
+			.banner ul li:first-child{margin-left:1%;}
+			.banner ul li.last { clear:both; margin:10px 25%;}
+			.banner ul li img { width:100%; }
+		}
+
+		/* 스마트폰 가로 버전 */
+		@media all and (min-width:481px) and (max-width:767px) {
+			#visual{ background-color:gold; text-align:center; font-weight:bold; }
+			#content{width:100%;}
+			.banner{ width:75%; margin:20px auto;}
+			.banner ul li{
+				width:60%;
+				border:1px solid #333;
+				margin:0 auto 10px;
+			}
+			.banner ul li img { width:100%; }
+		}
+
+		/* 스마트폰 새로 버전 */
+		@media all and (min-width:320px) and (max-width:480px) {
+			footer{background-color:blue; color:#fff; text-align:center;}
+		}
+
+	</style>
+	<script></script>
+</head>
+<body>
+	<header>
+		헤더 | 로고, 보조 메뉴, 주 메뉴
+		<nav>
+			로그인, 게시판, 갤러리....
+		</nav>
+	</header>
+	<div id="visual">
+		애니메이션, 캐로셀, 슬라이딩 원도우
+	</div>
+	<div id="content">
+		<div class="banner">
+			<ul>
+				<li><a href="#" title="이미지1"><img src="img/banner01.jpg" alt=""/></a></li>
+				<li><a href="#" title="이미지2"><img src="img/banner02.jpg" alt=""/></a></li>
+				<li class="last"><a href="#" title="이미지3"><img src="img/banner03.jpg" alt=""/></a></li>
+			</ul>
+		</div>
+	</div>
+	<section> <!--헤드라인 짝을 맞춰 줘야 한다. validator -->
+		<h2> section : 비슷한 정보의 값들, 어떠한 정보들을 모아주는 영역 </h2>
+		<h3> 제목 h2~h6까지 사용이 가능 </h3>
+		<h4> h5 ~ h6 파편화 : 점으로 보이거나 글씨가 깨지는 현상 -> 모바일 기기에서 훨씬 작게 보인다. </h4>
+	</section>
+	<hr/>
+	<footer>
+		카피라이트, 법률정보, 개인방침....
+	</footer>
+</body>
+</html>
+<!--
+	삼성엔지니어링 미디어쿼리 분기 방법 (1600px 이상의 모니터가 필요)
+	@media screen and (min-width:1280px) and (max-width:1500px){}
+	@media screen and (min-width:1141px) and (max-width:1279px){}
+	@media screen and (min-width:1071px) and (max-width:1140px){} /* pc ↑ */
+
+	/* 모바일 ↓ */
+	@media screen and (min-width:960px) and (max-width:1070px){}  
+	@media screen and (min-width:768px) and (max-width:959px){}
+	@media screen and (min-width:481px) and (max-width:767px){}
+	@media screen and (min-width:320px) and (max-width:480px){}
+-->
