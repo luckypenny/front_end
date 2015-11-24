@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	li { list-style-type:none }
+	body{
+		font:italic bold 20px/1.5em "Arial", Gulim; 
+		padding:20px;
+	}
+	h1,ul{padding:10px;} 
+	.util li {display:inline;} /*더블마진 없애기*/
+
+	.util li a {
+		background-color:darkblue;
+		color:#abcdef;
+		padding:10px 20px;
+		float:left;
+		margin-right:1px;
+		text-decoration:none;
+		transition:background-color 0.5s, color 0.5s;
+	}
+
+	.util li a:hover {
+		background-color:#abcdef;
+		color:#123456;
+	}
+	</style>
+	<script></script>
+</head>
+<body>
+	<h1>TRANSITION-multi</h1>
+	<ul class="util">
+		<li><a href="#">HOME</a></li>
+		<li><a href="#">JOIN</a></li>
+		<li><a href="#">SITEMAP</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style>
+	body {
+		background-color:#333;
+		color:#fff;
+		font-size:17px;
+		font-weight:700;
+		font-style:italic;
+	}
+	p {
+		background-color:lightblue;
+		width:150px;height:150px;
+	}
+	.translate {
+		transform:translate(100px,50px);
+	}
+	.margin {
+		margin:20px 30px 40px 50px;
+	}
+	.scale{
+		transform:scale(0.5,1);		
+	}
+
+	.rotate{transform:rotate(-45deg);}
+	.rotate_x{transform:rotatex(80deg);}
+	.rotate_y{transform:rotatey(80deg);}
+	</style>
+	<script></script>
+</head>
+<body>
+	<p>BASIC</p>
+	<hr/>
+	<p class="translate">이동_transform:translate(x,y)</p>
+	<hr/>
+	<p class="margin">바깥쪽여백</p>
+	<hr/>
+	<p class="scale">크기변화_transform:scale(x,y)</p>
+	<hr/>
+	<p class="rotate">회전_transform:rotate(45deg)</p>
+	<hr/>
+	<p class="rotate_x">x축으로 회전_transform:rotatex(80deg)</p>
+	<hr/>
+	<p class="rotate_y">y축으로 회전_transform:rotatey(80deg)</p>
+	<hr/>
+</body>
+</html>
