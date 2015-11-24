@@ -9,16 +9,19 @@
 		body{margin:0; padding:0;}
 		a:link, a:visited{text-decoration:none; color:#fff;}
 		a:hover, a:focus{ color:#f00; } /* 커서 와 탭키 */
-			
-		/*+++++ 스킵-네비세이션 +++++*/
-			#skipNav{width:100%; position:absolute; top:-30px; }
-			#skipNav p a { 
-				display:block; 
-				width:100%;
-				position:absolute; 
-				line-height:30px;
-				background-color:#000; 
 
+		/*+++++ 스킵-네비세이션 +++++*/
+			#skipNav {
+				width:100%;
+				position:absolute;
+				top:-30px; 
+			}
+			#skipNav p a {
+				display:block;
+				width:100%;
+				position:absolute;
+				line-height:30px;
+				background-color:#000;
 				text-align:center;
 			}
 			#skipNav p a:focus{ top:30px; }
@@ -85,7 +88,7 @@
 		<header>
 			<h1><img src="img/logo.png" alt=""/></h1>
 			<div id="video">
-				<video controls autoplay>
+				<video controls loop>
 					<source src="frozen_fever.mp4" type="video/mp4" />
 				</video>
 			</div>

@@ -7,18 +7,82 @@
 	<style>
 		*{margin:0; padding:0}
 		body{margin:0; padding:0}
+		a:link, a:visited{ text-decoration:none; color:#fff; }
+		a:hover, a:focus{ color:#f00; }
 
 		/*++++++ 스킵 네비게이션 +++++++++*/
-		#skipNav{width:100%; background-color:red; position:absolute; top:-30px;}
+		#skipNav{ 
+			width:100%; 
+			background-color:red; 
+			position:absolute; 
+			top:-30px;
+		}
+		#skipNav p a{
+			display:block;
+			width:100%;
+			position:absolute;
+			line-height:30px;
+			background-color:#000;
+			text-align:center;
+		}
+		#skipNav p a:focus{ top:30px; }
+		/*+++++++++++++++++++++++++++++++++*/
+
+		#wrapper{
+			width:100%;
+			position:relative;
+		}
 		
-		/*+++++++++++++++++++++++++++++++++/
+		header { width:90%; margin:0 auto; }
+		header h1 { width:100%; margin-top:50px; text-align:center; }
+		header h1 img { width:200px; }
+		#video { width:65%; margin:10px auto 30px;}
+		#video video{width:100%;}
+		nav { width:100% }
+		nav form{ width:70%; margin:0 auto; }
+		nav form input { 
+			width:99%; 
+			height:26px; 
+			font-size:120%; 
+			text-indent:10px; 
+		} 
+
+		#section{ width:100%; margin:30px 0;}
+		#section h2{position:absolute;width:1px; height:1px; font-size:1px; line-height:0; left:-9999px; overflow:hidden;}
+		#section .view{ width:70%; margin:0 auto;}
+		#section .view a {
+			display:inline-block; 
+			width:24%;	
+			border:1px solid #ccc;
+			margin-bottom:5px;
+		}
+		#section .view a img { width:100%; }
+		#section a:hover{ box-shadow:2px 2px 2px rgba(0,0,0,0.5) }
+		
+		/* display:none은 스크린리더가 읽지 못한다. */
+		@media all and (min-width:1024px){ /* pc 버전 */
+			
+		}
+		@media all and (min-width:768px) and (max-width:1023px) {
+			--header { background-color:#ccc; }
+			#section .view a { display:inline-block; width:32%; border:1px solid #ccc; margin-bottom:5px;} 
+			#section h2, .view .img1 {position:absolute; width:1px; height:1px; font-size:1px; line-height:0; left:-9999px; overflow:hidden;}
+		}
+		@media all and (min-width:320px) and (max-width:767px) {
+			--section { background-color:gold}
+			header h1 img { width:150px; }
+			#video{ width:90%; margin:10px auto 30px;} 
+			nav form{ width:90%; margin:0 auto; }
+			nav form input { width:99%; height:26px; font-size:100%; text-indent:10px; }
+			#section .view a { display:inline-block; width:47%; border:1px solid #ccc; margin-bottom:5px;} 
+		}
 	</style>
 	<script></script>
 </head>
 <body>
 	<div id="skipNav">
-		<p><a href="#"> 비디오 영역 바로가기</a></p>
-		<p><a href="#"> 썸네일 영역 바로가기</a></p>
+		<p><a href="#skipNav">비디오 영역 바로가기</a></p>
+		<p><a href="#section">썸네일 영역 바로가기</a></p>
 	</div>
 	<div id="wrapper">
 		<header>

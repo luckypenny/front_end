@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style>
+	*{margin:0; padding:0;}
+	li { list-style:none; }
+	body{margin:0; padding:0;}
+
+	
+	/* PC 버전 */
+	@media all and (min-width:1024px) {
+		header{background-color:blue; text-align:center; color:#fff;}
+		#content{width:100%;}
+		.banner{width:84%; padding-left:4%; margin:20px auto;}
+		.banner ul {background-color:blue; overflow:hidden;}
+		.banner ul li{width:30%; float:left; margin-right:1%; border:1px solid #333; background-color:red;}
+		.banner ul li img{ width:100%; }
+	}
+	</style>
+	<script></script>
+</head>
+<body>
+	<header>
+		헤더 | 로고, 보조 메뉴, 주메뉴
+		<nav>
+			로그인, 게시판, 갤러리...
+		</nav>
+	</header>
+	<div id="visual">
+		애니메이션, 캐로셀, 슬라이딩 원도우
+	</div>
+	<div id="content">
+		<div class="banner">
+			<ul>
+				<li><a href="#" alt=""><img src="img/banner01.jpg" alt=""></a></li>
+				<li><a href="#" alt=""><img src="img/banner02.jpg" alt=""></a></li>
+				<li><a href="#" alt=""><img src="img/banner03.jpg" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+	<section>
+		<h2> section : 비슷한 정보의 값들, 어떠한 정보들을 모아주는 영역 </h2>
+		<h3> 제목 h2~h6까지 사용이 가능 </h3>
+		<h4> h5 ~ h6 파편화 : 점으로 보이거나 글씨가 깨지는 현상 -> 모바일 기기에서 훨씬 작게 보인다. </h4>
+	</section>
+	<hr/>
+	<footer>
+		카피라이트, 법률정보, 개인방침 ...
+	</footer>
+</body>
+</html>

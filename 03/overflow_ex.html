@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org./TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Position</title>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+#zero { background-color: #f00; width: 50px; height: 50px; }
+#one { background-color: #555; width: 150px; height: 150px; }
+#two { background-color: #ff0; width: 50px; height: 50px; }
+#three { background-color: #0f0; width: 50px; height: 50px; }
+#four { background-color: #00f; width: 50px; height: 50px; }
+#five { background-color: #f0f; width: 50px; height: 50px; }
+
+/*Position*/
+#zero { position:absolute; top:20px; left:20px; }
+#one { }
+#two { }
+#three { position:absolute; top:20px; left:20px; }
+#four { }
+#five { position:relative; top:20px; left:20px; }
+</style>
+</head>
+<body>
+<div id="zero">
+000
+</div>
+<div id="one">
+	<div id="two">222</div>
+	<div id="three">333</div>
+	<div id="four">444</div>
+</div>
+<div id="five">
+555
+</div>
+</body>
+</html>

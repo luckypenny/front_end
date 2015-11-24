@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<style>
+		*{margin:0; padding:0;}
+		body{background-color:lightblue;}
+		dl{ width:400px; margin:100px auto; }
+		dt{
+			width:100%;
+			line-height:20px;
+			background-color:#ccc;
+			text-align:center;
+			font-size:14px;
+			color:#fff;
+			text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+
+			/* 제조사 식별코드 : 벤더프리픽스 
+			
+				-webkit-tranform:scale(x,y); (2년전 까지만해도 이렇게 사용했다.)
+			*/
+			/* 시작할 각도, 시작하는 색상, 끝나는 색상 -webkit- 브라우저를 돌리는 엔진*/
+			/* 사파리, 크롬, 오페라미니(모바일용) */
+			background-image:-webkit-linear-gradient(top, #eee, #777);
+
+			/* 파이어폭스 */
+			background-image:-moz-linear-gradient(top, #eee, #777);
+			
+			/* 오페라 */
+			background-image:-o-linear-gradient(top, #eee, #777);
+
+			/* 익스플로어 */
+			background-image:-ms-linear-gradient(top, #eee, #777);
+		}
+		dd{
+			font-size:13px;
+			background-color:#333;
+			color:#999;
+			padding:5px;
+		}
+	</style>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function(){
+			// 01) dd 화면에서 없애기 : display:none
+			$("dd").css({"display":"none"});
+			$("dt").css({"cursor":"pointer"});  //손가락 모양으로 변하게 만들기
+
+			// 02) dt 클릭하면 dd 나타나게 만들기
+			$("dt").click(function(){
+				// 03) dd 화면에 나타게 만들기 : display:block (문제점 발견: dt를 클릭하면 dd가 다 보임)
+				// $("dd").css("display","block");
+				// 애플 클릭하면 애플 값만 보이게 만들기
+				// 해결: 지금dt가 현재 클릭된 값이라는 인식
+				// this(나 자신) dd가 보여야 함 (문제점 :: 부드럽게 떨어지지 않는다.) 
+				// 
+				$("dd").css({"display":"none"});
+				$(this).next().css({"display":"block"});
+			});
+		});
+	</script>
+</head>
+<body>
+	<dl>
+		<dt>애플(APPLE)</dt>
+		<dd>
+			<p>
+				매킨토시 시리즈, 아이팟, 아이폰, 아이패드로 유명한 애플은 1976년 4월 설립되어 이듬해 주식을 상장했다. 창립 이후 30여 년 동안 사용한 '애플컴퓨터(Apple Computer, Inc.) 란 회사명을 2007년 애플(Apple Inc)로 바꾸었다. 2008년 경제 전문 &lt;포춘&gt; 지에 의해 미국에서 가장 존경 받는 기업으로 선정되었으며, S&P 지수를 구성하는 기업이다.
+			</p>
+		</dd>
+		<dt>삼성(SAMSUNG)</dt>
+		<dd>
+			<p>
+				삼성은 1990년대 초 수십 개의 계열사와 복잡한 사업구조로 인해 기업 이미지는 전혀 체계가 없이 중구난방이었다. 로고도 삼성을 한자로 표기한 것과 해외에서 쓰는 세 개의 별 마크 등 여러 가지가 공존했다. 이들 로고는 시대에 매우 뒤떨어졌으며 다양한 대상에 일관되게 적용하기에도 복잡한 형태였다. 1993년 하나의 삼성으로 통일하는 대대적인 리뉴얼이 단행되었고, 지금의 삼성이 존재 하게 되었다.
+			</p>
+		</dd>
+		<dt>엘지(LG)</dt>
+		<dd>
+			<p>
+			1931년 부터 1946년 까지는 구인상회의 상업활동이 전개된 시기, 1947년 부터 1950년 까지는 락희화학에서 크림을 생산하던 시기, 
+			1951년 부터 1960년 까지는 럭키금성상사주식회사를 설립 하여 무역업을 시작하고, 주식회사 금성사를 설립으로 전자공업을 시작하였다.	
+			</p>
+		</dd>
+	</dl>
+</body>
+</html>
+<!--
+	arrcordian
+		:::: 제한된 공간에서 정보를 제시하는 콘턴츠 패널로 내용을 접거나 펼수 있는 위젯
+
+		crossbrowsing 처리 (보통 익스플러어 8,9 버전까지만 맞춘다.)
+		삼성엔지니어링 사이트 참조]
+-->

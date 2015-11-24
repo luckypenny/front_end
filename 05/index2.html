@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+	<meta charset="utf-8"/>
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> <!-- 사용자 단말 확대 금지 하는 거 추가-->
+	<style>
+		*{margin:0; padding:0;}
+		body{margin:0; padding:0;}
+		a:link, a:visited{
+			text-decoration:none;
+			color:#000;
+		}
+		a:hover, a:focus{
+			text-decoration:underline;
+			color:#bc2424;
+		}
+		#wrapper{
+			max-width:1152px;  /* 와이드 화면에서 이미지가 너무 커지기 때문에 최대 값을 정해준다. 브라우져 해상도와 모니터 해상도는 다르다. 1600이 최대로 맞춰 놓고 작업하면 된다. */
+			margin:0 auto;
+		}
+		
+		dl{
+			width:100%;
+		}
+		dt{ width:100%; position:relative; margin:40px 0 30px;}
+		dt img#canon{ position:absolute; right:0;}
+		
+		#nav{ background-color:#ccc; width:100%;}
+		#nav p { width:20%; line-height:30px; background-color:#ccc; float:left; text-align:center; outline:1px solid #fff; } /* border와 outline의 차이점 : outline은 여백을 차지 하지 않는다. */
+		#nav p:hover a{ color:#fff; } /* p a:hover{ color:#fff}  차이점은 p 테크(넓은 범위까지 포함하냐 아니면 글씨만 호버되느냐의 차이가 있다. */
+		h1{ font-weight:400; font-family:dotum; padding-top:40px; clear:both;}
+		.official { font-size:110%; margin-bottom:20px; }
+		
+		dd { width:48%; float:left;  text-align:center; line-height:150%; 
+			overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+			margin-bottom:20px;
+		}
+		dd#textArea{ width:100%; text-align:left;}
+
+		dd img{ width:100%; }
+
+		dd#sum2, dd#sum4, dd#sum6{ margin-left:4%; }
+
+		dd#sum6{ height:210px; }
+		dd#sum6 iframe{ width:100%; height:100%; border:none;}
+		
+		#footer, dd#sum5{ clear:both; }
+
+		#footer { width:100%; background-color:#000; color:#fff; text-align:center; }
+
+		@media  all and (min-width:1024px) {
+			#nav span{ display:none; }
+		}
+
+		@media all and (min-width:768px) and (max-width:1023px) {
+			#nav span{ display:none; }
+		}
+
+		@media all and (min-width:320px) and (max-width:767px) {
+			dd#textArea{ /* background-color:green; */ }
+
+			dt{ width:100%; position:relative; margin:40px 0 30px; text-align:center;}
+			dt img#canon{ position:static;  display:block;  margin:10px auto; }
+			dt hr{ display:none; } 
+			
+			h1{ font-size:150%; }
+
+			#nav p { width:100%; line-height:30px; height:0; background-color:#ccc; float:left; text-align:center; outline:1px solid #fff; } 
+			#nav:hover p { height:30px; }
+
+			dd{ width:100%; }
+			dd#sum2, dd#sum4, dd#sum6{ margin-left:0%; }
+		}
+
+	</style>
+	<script></script>
+</head>
+<body>
+	<div id="wrapper">
+		<dl>
+			<dt><!-- inline 밖에 오지 않는다. 인라인인 경우 대부분 alt나 title을 갖는다. <대부분 DL 리스트는 상세 페이지르 만들경우 사용한다. 제목 나오고 상세나오고 > -->
+				<img id="logo"src="images/hd-logo.png" alt="logo"/><img id="canon"src="images/hd-korea.png" alt="hd-korea.png"/>
+				<hr/>
+			</dt> <!-- dt 밑에는 dd뿐이 오지 못한다. -->
+			<dd id="nav">
+				<span>▼</span>
+				<p><a href="#" title="login">LOGIN</a></p>
+				<p><a href="#" title="photo">PHOTO</a></p>
+				<p><a href="#" title="gallery">GALLERY</a></p>
+				<p><a href="#" title="Q&amp;A">Q&amp;A</a></p> <!--title 안쪽에도 &amp; 로 해야 validator에서 에러가 나지 않는다. -->
+				<p><a href="#" title="board">BOARD</a></p>
+			</dd>
+			<dd id="textArea">
+				<h1>캐논의 한국 오피셜 웹 사이트</h1>
+				<p class="official">Official Website of Canon in Korea</p>
+			</dd>
+			<dd id="sum1">
+				<a href="#" title="sum1">  <!-- 웹 표준에서는 a 태그 밑에 인라인 뿐이 안되지만 HTML5에서는 가능하다 -->
+					<img src="images/pic-ckci.jpg" alt="이미지1" /><br/>
+					<strong class="st" >CANON KOREA CONSUMER IMAGING INC.</strong><br/> <!-- 리더기가 읽는다. -->
+					<span class="sm1">캐논코리아 컨슈머 이미징</span><br/>
+					<span class="sm2">디지털카메라/렌즈/컴팩트 카메라/영상장비/캠코더/포토 프린터/쌍안경/액세서리</span>
+				</a>
+			</dd>
+			<dd id="sum2">
+				<a href="#" title="sum2">  <!-- 웹 표준에서는 a 태그 밑에 인라인 뿐이 안되지만 HTML5에서는 가능하다 -->
+					<img src="images/pic-ckbs.jpg" alt="이미지2" /><br/>
+					<strong class="st" >CANON KOREA BUSINESS SOLUTIONS INC.</strong><br/> <!-- 리더기가 읽는다. -->
+					<span class="sm1">캐논코리아 비즈니스 솔루션</span><br/>
+					<span class="sm2">복합기/프린터/디지털인쇄기/팩시밀리/스캐너/솔루션/의료기기/OCE제품</span>
+				</a>
+			</dd>
+			<dd id="sum3">
+				<a href="#" title="sum3">  <!-- 웹 표준에서는 a 태그 밑에 인라인 뿐이 안되지만 HTML5에서는 가능하다 -->
+					<img src="images/pic-csek.jpg" alt="이미지3" /><br/>
+					<strong class="st" >CANON SEMICONDUCTOR ENGINEERING KOREA INC.</strong><br/> <!-- 리더기가 읽는다. -->
+					<span class="sm1">반도체 노광장치</span>
+				</a>
+			</dd>
+			<dd id="sum4">
+				<a href="#" title="sum4">  <!-- 웹 표준에서는 a 태그 밑에 인라인 뿐이 안되지만 HTML5에서는 가능하다 -->
+					<img src="images/pic-jepex.jpg" alt="이미지4" /><br/>
+					<strong class="st" >TV카메라에 대해서는 CKCI의 페이지를 봐 주세요</strong><br/> <!-- 리더기가 읽는다. -->
+				</a>
+			</dd>
+			<dd id="sum5">
+				<a href="#" title="sum5">  <!-- 웹 표준에서는 a 태그 밑에 인라인 뿐이 안되지만 HTML5에서는 가능하다 -->
+					<img src="images/pic-sns.jpg" alt="이미지5" /><br/>
+					<strong class="st" >Official Social Media Account List</strong><br/> <!-- 리더기가 읽는다. -->
+					<span class="sm1">공식 SNS 계정 리스트</span>
+				</a>
+			</dd>
+			<dd id="sum6">
+				<iframe src="https://www.youtube.com/embed/qdYYNyJOiJw" ></iframe>
+			</dd>
+		</dl>
+	</div>
+	<div id="footer">
+		<span>Copyright &copy; Canon Inc. All Rights Reserved.</span>
+	</div>
+</body>
+</html>
+<!--
+현재 많이 사용하는 작업 meta 에 설정
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+w3c의 뷰포트 표준방식 style 영역안에서 사용
+  <stlyle>
+		@viewport{
+			//style												//meta
+			width:device-width;   :::::: width=device-width
+			zoom:1;                   ::::::  initial-scale=1.0
+			min-zoom:1;			   ::::::  minimum-scale=1.0
+			max-zoom:1;           ::::::  maximum-scale=1.0
+			user-zoom:"no";        ::::::  user-scalable=no
+		}
+  </style>
+-->
